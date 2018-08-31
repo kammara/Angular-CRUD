@@ -1,0 +1,36 @@
+<div class="image">
+	<br>
+	<br>
+	<br>
+<div class="container">	
+<h1>
+	User Details
+</h1>
+
+<table>
+	<th>ID</th>
+	<th>Name</th>
+	<th>Password</th>
+	<th>Email</th>
+	<th>Role</th>
+	<th></th>
+	<th></th>
+	<tr *ngFor="let user of users">
+		<td>{{user.id}}</td>
+		<td>{{user.name}}</td>
+	    <td>{{user.password}}</td>
+		<td>{{user.email}}</td>
+		<td>{{user.role}}</td>
+		<td (click) = "deleteUser(user.id)"><a>DELETE</a></td>
+		<td [routerLink] ="['/update',user.id]"><a>Update</a></td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
+<a class="btn btn-primary" routerLink = "/user" role="button">Add User</a>
+<a class="btn btn-primary" routerLink = "/logout" role="button">LogOut</a>
+
+</div>
+</div>
+<router-outlet></router-outlet>
