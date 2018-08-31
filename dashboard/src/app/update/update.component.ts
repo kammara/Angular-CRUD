@@ -26,7 +26,7 @@ updateUser(user){
      	"email": user.email,
      	"role": user.role
      };
-     const url = '${"http://localhost:7777/users"}/${this.id}';
+     const url = "http://localhost:7777/users/"+this.id;
      console.log(url);
      this.http.put(url, JSON.stringify(this.userObj), {headers: this.headers})
      .toPromise()
